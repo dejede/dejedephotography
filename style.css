@@ -190,9 +190,9 @@ footer {
     }
 
 	.nav-links a {
-		margin: 0 12px;
-		font-size: 12px;   /* sama dengan desktop */
-		font-weight: 600;
+		margin: 0 11px;
+		font-size: 11px;   /* sama dengan desktop */
+		font-weight: 400;
 	}
 
 
