@@ -1,364 +1,124 @@
-:root {
-    --sage: #9caf9a;
-    --sage-dark: #6f8f7a;
-    --dark: #2f3e3a;
-    --light: #f4f7f5;
-    --white: #ffffff;
-    --border: #ced4ce;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
-    background: var(--light);
-    color: var(--dark);
-    line-height: 1.6;
-}
-
-/* --- NAVIGATION --- */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 8%;
-    background: var(--white);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-/* LOGO WITH IMAGE */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 26px;
-    font-weight: 800;
-    color: var(--sage-dark);
-    text-decoration: none;
-    letter-spacing: 3px;
-}
-
-.logo::before {
-    content: "";
-    width: 64px;
-    height: 64px;
-    background: url("images/logo.png") center / contain no-repeat;
-    display: inline-block;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--dark);
-    margin-left: 24px;
-    font-weight: 600;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: var(--sage);
-}
-
-/* --- LAYOUT --- */
-.container {
-    max-width: 1000px;
-    margin: 50px auto;
-    padding: 0 20px;
-    animation: fadeIn 0.5s ease;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-h1 {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 32px;
-    font-weight: 800;
-}
-
-.card {
-    background: var(--white);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    margin-bottom: 20px;
-}
-
-/* --- PORTFOLIO GRID --- */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 8px; /* jarak dipersempit */
-}
-
-.grid img {
-    width: 100%;
-    aspect-ratio: 4 / 5; /* portrait */
-    object-fit: cover;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.4s;
-}
-
-.grid img:hover {
-    transform: scale(1.03);
-}
-
-/* --- FORM GRID --- */
-.grid-form {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin-bottom: 10px;
-}
-
-/* --- VENDOR SECTION --- */
-.vendor-section {
-    background: #f9fbf9;
-    padding: 20px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    margin: 20px 0;
-}
-
-.vendor-row {
-    display: flex;
-    align-items: flex-start;
-    padding: 10px 0;
-    border-bottom: 1px dashed var(--border);
-}
-
-.vendor-row:last-child {
-    border-bottom: none;
-}
-
-.v-label {
-    min-width: 110px;
-    font-size: 11px;
-    font-weight: 800;
-    color: var(--sage-dark);
-    padding-top: 5px;
-    text-transform: uppercase;
-}
-
-.v-options {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.v-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    background: var(--white);
-    padding: 4px 12px;
-    border-radius: 20px;
-    border: 1px solid var(--border);
-    cursor: pointer;
-    font-size: 12px;
-    transition: 0.2s;
-}
-
-.v-item:hover {
-    border-color: var(--sage);
-}
-
-.v-item.active {
-    background: var(--sage);
-    color: var(--white);
-}
-
-.v-item input {
-    width: auto;
-    margin: 0;
-}
-
-/* --- FORMS & BUTTONS --- */
-label {
-    display: block;
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--sage-dark);
-    text-transform: uppercase;
-    margin-top: 10px;
-}
-
-input,
-select,
-textarea {
-    width: 100%;
-    padding: 12px;
-    margin: 5px 0 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 15px;
-    font-family: inherit;
-}
-
-.actions {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 10px;
-    margin: 20px 0;
-}
-
-.btn {
-    background: var(--sage);
-    color: var(--white);
-    padding: 15px;
-    border: none;
-    border-radius: 8px;
-    width: 100%;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 15px;
-    transition: 0.3s;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-}
-
-.btn:hover {
-    background: var(--sage-dark);
-    transform: translateY(-2px);
-}
-
-.btn-alt {
-    background: #e0e6e2;
-    color: var(--dark);
-    border: 1px solid var(--border);
-}
-
-.btn-wa {
-    background: #25d366;
-}
-
-.btn-wa:hover {
-    background: #128c7e;
-}
-
-/* --- PREVIEW & ABOUT --- */
-.preview-area {
-    background: var(--dark);
-    color: #ecf0f1;
-    padding: 25px;
-    border-radius: 10px;
-    font-size: 14px;
-    white-space: pre-wrap;
-    border-left: 5px solid var(--sage);
-    max-height: 500px;
-    overflow-y: auto;
-}
-
-.about-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.profile-content {
-    font-size: 15px;
-    line-height: 1.7;
-    color: var(--dark);
-    text-align: justify;
-}
-
-/* --- SOCIAL --- */
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin: 30px 0;
-}
-
-.social-item {
-    text-decoration: none;
-    color: var(--dark);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    transition: 0.3s;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-.social-item:hover {
-    color: var(--sage-dark);
-    transform: translateY(-3px);
-}
-
-.social-icon {
-    width: 40px;
-    height: 40px;
-    background: var(--light);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--border);
-}
-
-.social-icon svg {
-    width: 20px;
-    height: 20px;
-    fill: var(--sage-dark);
-}
-
-.contact-box {
-    background: #f9fbf9;
-    padding: 25px;
-    border-radius: 12px;
-    text-align: center;
-    margin-top: 30px;
-    border: 1px solid var(--border);
-}
-
-/* --- FOOTER --- */
-footer {
-    text-align: center;
-    padding: 40px;
-    color: #888;
-    font-size: 14px;
-}
-
-/* --- RESPONSIVE --- */
+/* ===============================
+   MOBILE PREMIUM – PHOTOGRAPHY UX
+   =============================== */
 @media (max-width: 600px) {
+
+    /* --- NAVBAR PREMIUM --- */
+    .navbar {
+        position: sticky;
+        top: 0;
+        padding: 10px 5%;
+        flex-direction: column;
+        gap: 10px;
+        backdrop-filter: blur(8px);
+        background: rgba(255,255,255,0.95);
+    }
+
+    .logo {
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
+
+    .logo::before {
+        width: 36px;
+        height: 36px;
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+        padding: 6px 12px;
+        border-radius: 20px;
+        background: #f1f4f2;
+    }
+
+    .nav-links a:hover {
+        background: var(--sage);
+        color: white;
+    }
+
+    /* --- CONTAINER --- */
+    .container {
+        margin: 25px auto;
+        padding: 0 14px;
+    }
+
+    h1 {
+        font-size: 22px;
+        margin-bottom: 18px;
+    }
+
+    /* --- PREMIUM PHOTO GRID --- */
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+    }
+
+    .grid img {
+        border-radius: 6px;
+        transition: 0.25s ease;
+    }
+
+    .grid img:active {
+        transform: scale(0.97);
+    }
+
+    /* --- OPTIONAL: FEATURED FIRST IMAGE --- */
+    .grid img:first-child {
+        grid-column: span 2;
+        aspect-ratio: 4 / 3;
+    }
+
+    /* --- BUTTONS (THUMB FRIENDLY) --- */
+    .btn {
+        padding: 14px;
+        font-size: 14px;
+        border-radius: 12px;
+    }
+
     .actions {
         grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    /* --- FORM INPUT (IOS / ANDROID FEEL) --- */
+    input,
+    select,
+    textarea {
+        font-size: 16px;
+        padding: 14px;
+        border-radius: 12px;
+    }
+
+    /* --- VENDOR SECTION --- */
+    .vendor-section {
+        padding: 15px;
     }
 
     .vendor-row {
         flex-direction: column;
+        gap: 8px;
     }
 
-    .navbar {
-        padding: 15px 5%;
-        flex-direction: column;
-        gap: 15px;
+    .v-label {
+        font-size: 10px;
     }
 
-    .nav-links a {
-        margin: 0 10px;
-        font-size: 12px;
+    .v-item {
+        padding: 6px 14px;
+        font-size: 11px;
+    }
+
+    /* --- FOOTER --- */
+    footer {
+        font-size: 11px;
+        padding: 20px 12px;
+        line-height: 1.6;
     }
 }
