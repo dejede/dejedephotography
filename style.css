@@ -1,3 +1,6 @@
+/* =================================================
+   ROOT VARIABLES
+   ================================================= */
 :root {
     --sage: #9caf9a;
     --sage-dark: #6f8f7a;
@@ -7,6 +10,9 @@
     --border: #ced4ce;
 }
 
+/* =================================================
+   RESET & BASE
+   ================================================= */
 * {
     margin: 0;
     padding: 0;
@@ -20,7 +26,9 @@ body {
     line-height: 1.6;
 }
 
-/* ================= NAVBAR ================= */
+/* =================================================
+   NAVBAR
+   ================================================= */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -30,11 +38,13 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border-bottom: 2px solid var(--sage-dark);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
 }
 
+/* LOGO */
 .logo {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 10px;
     font-size: 26px;
@@ -42,32 +52,78 @@ body {
     color: var(--sage-dark);
     text-decoration: none;
     letter-spacing: 3px;
+    transition: color 0.25s ease;
 }
 
+/* LOGO ICON */
 .logo::before {
     content: "";
-    width: 64px;
-    height: 64px;
-    background: url("images/logo.png") center / contain no-repeat;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    background: url("./images/logo.png") center / contain no-repeat;
     display: inline-block;
+    transition: transform 0.25s ease, filter 0.25s ease;
 }
 
+.logo:hover {
+    color: var(--sage);
+}
+
+.logo:hover::before {
+    transform: scale(1.08);
+    filter: brightness(1.15);
+}
+
+.logo:active::before {
+    transform: scale(0.95);
+}
+
+/* LINK NAV */
 .nav-links a {
+    position: relative;
     text-decoration: none;
     color: var(--dark);
     margin-left: 18px;
     font-weight: 500;
-    font-size: 13px; /* diperbesar */
+    font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 0.8px;
-    transition: 0.3s;
+    padding: 6px 0;
+    transition: color 0.25s ease;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: var(--sage);
+    transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
     color: var(--sage);
 }
 
-/* ================= LAYOUT ================= */
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a.active {
+    color: var(--sage);
+    font-weight: 700;
+}
+
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* =================================================
+   LAYOUT
+   ================================================= */
 .container {
     max-width: 1000px;
     margin: 50px auto;
@@ -92,37 +148,34 @@ h1 {
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    margin-bottom: 20px;
 }
 
-/* ================= PORTFOLIO GRID ================= */
-/* DESKTOP DEFAULT: 4 KOLOM */
+/* =================================================
+   GRID
+   ================================================= */
 .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 8px;
 }
 
+/* ================= PORTFOLIO GRID IMAGE ================= */
 .grid img {
     width: 100%;
     aspect-ratio: 4 / 5;
     object-fit: cover;
     border-radius: 10px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: transform 0.3s ease;
 }
 
 .grid img:hover {
     transform: scale(1.03);
 }
 
-/* ================= FORM ================= */
-.grid-form {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-}
-
+/* =================================================
+   FORM
+   ================================================= */
 label {
     font-size: 11px;
     font-weight: 700;
@@ -138,7 +191,9 @@ input, select, textarea {
     font-size: 15px;
 }
 
-/* ================= BUTTON ================= */
+/* =================================================
+   ACTION BUTTONS
+   ================================================= */
 .actions {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
@@ -159,7 +214,205 @@ input, select, textarea {
     background: var(--sage-dark);
 }
 
-/* ================= FOOTER ================= */
+/* =================================================
+   VENDOR SECTION – CHECKBOX FIX
+   ================================================= */
+.vendor-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.vendor-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--white);
+    overflow: hidden;
+}
+
+.v-label {
+    background: var(--sage);
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    padding: 12px 14px;
+}
+
+.v-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, max-content));
+    gap: 6px 10px;
+    padding: 8px 10px;
+}
+
+.v-item {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 2px 4px;
+    border-radius: 6px;
+    white-space: nowrap;
+    line-height: 1.3;
+}
+
+.v-item input[type="checkbox"] {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    accent-color: var(--sage-dark);
+    vertical-align: middle;
+}
+
+.v-item:has(input:checked) {
+    background: rgba(156, 175, 154, 0.22);
+    color: var(--sage-dark);
+}
+
+/* =================================================
+   ABOUT PAGE – SOCIAL ICON FIX
+   ================================================= */
+.about-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-content {
+    max-width: 760px;
+    margin: 0 auto 35px;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.social-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    margin: 35px 0;
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--dark);
+    background: var(--white);
+    transition: all 0.25s ease;
+}
+
+.social-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--sage-dark);
+}
+
+.social-item:hover {
+    border-color: var(--sage);
+    background: rgba(156, 175, 154, 0.08);
+    color: var(--sage-dark);
+}
+
+.social-item:hover .social-icon {
+    background: var(--sage);
+}
+
+.social-item:hover .social-icon svg {
+    fill: var(--white);
+}
+
+/* =================================================
+   PREVIEW CAPTION – FIX PARAGRAF MEMANJANG
+   ================================================= */
+.preview-area {
+    white-space: pre-line;     /* KUNCI UTAMA */
+    line-height: 1.7;
+    font-size: 14px;
+    padding: 16px;
+    margin-top: 8px;
+    border-radius: 10px;
+    background: var(--light);
+    border: 1px dashed var(--border);
+    color: var(--dark);
+}
+
+/* =================================================
+   CONTACT BOX
+   ================================================= */
+.contact-box {
+    margin-top: 40px;
+    padding: 30px 25px;
+    border-radius: 16px;
+    background: linear-gradient(
+        135deg,
+        rgba(156, 175, 154, 0.18),
+        rgba(156, 175, 154, 0.08)
+    );
+    text-align: center;
+}
+
+.contact-box h3 {
+    margin-bottom: 8px;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--sage-dark);
+}
+
+.contact-box p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* =================================================
+   WHATSAPP BUTTON – ANIMATION
+   ================================================= */
+@keyframes waPulse {
+    0% { box-shadow: 0 0 0 0 rgba(156, 175, 154, 0.6); }
+    70% { box-shadow: 0 0 0 14px rgba(156, 175, 154, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(156, 175, 154, 0); }
+}
+
+.btn-wa {
+    font-size: 14px;
+    letter-spacing: 0.4px;
+    animation: waPulse 2.5s infinite;
+}
+
+.btn-wa:hover {
+    animation: none;
+}
+
+/* =================================================
+   FOOTER
+   ================================================= */
 footer {
     text-align: center;
     padding: 40px;
@@ -170,39 +423,11 @@ footer {
 /* =================================================
    RESPONSIVE
    ================================================= */
-
-/* TABLET & MOBILE BESAR → 3 KOLOM */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
         gap: 14px;
         padding: 15px 5%;
-    }
-
-    .logo {
-        font-size: 22px;
-        letter-spacing: 2px;
-    }
-
-    .logo::before {
-        width: 45px;
-        height: 45px;
-    }
-
-	.nav-links a {
-		margin: 0 10px;
-		font-size: 12px;   /* sama dengan desktop */
-		font-weight: 500;
-	}
-
-
-    .container {
-        margin: 25px auto;
-        padding: 0 15px;
-    }
-
-    h1 {
-        font-size: 24px;
     }
 
     .grid {
@@ -212,15 +437,13 @@ footer {
     .actions {
         grid-template-columns: 1fr;
     }
+
+    .vendor-row {
+        grid-template-columns: 1fr;
+    }
 }
 
-/* HP KECIL → 2 KOLOM */
 @media (max-width: 480px) {
-    .grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 6px;
-    }
-
     footer {
         font-size: 12px;
         padding: 25px 15px;
