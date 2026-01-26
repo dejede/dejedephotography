@@ -423,23 +423,29 @@ footer {
 /* =================================================
    RESPONSIVE
    ================================================= */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .navbar {
-        padding: 8px 12px;
+        flex-direction: column;
+        gap: 12px;
+        padding: 13px 5%;
     }
 
-    .logo {
-        font-size: 22px;
-        letter-spacing: 2px;
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 
-    .logo::before {
-        width: 32px;
-        height: 32px;
+    .actions {
+        grid-template-columns: 1fr;
     }
 
+    .vendor-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
     footer {
-        font-size: 12px;
-        padding: 25px 15px;
+        font-size: 11px;
+        padding: 23px 13px;
     }
 }
