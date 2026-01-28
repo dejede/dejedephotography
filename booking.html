@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dejede Booking Otomatis</title>
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS EXTERNAL -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR- DEJEDE -->
+<nav class="navbar">
+    <a href="index.html" class="logo">DEJEDE</a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="pristlist.html">pristlist</a>
+        <a href="booking.html" class="active">Booking</a>
+		<a href="weddinggen.html" class="nav-highlight">Weddinggen</a>
+		<a href="schedulegen.html" class="nav-highlight">Schedulegen</a>
+        <a href="about.html">About</a>
+    </div>
+</nav>
+
+    <!-- PRICELIST -->
+    <div class="container">
+        <h1>Dejede Booking Otomatis</h1>
+
+
+        <!-- BOOKING -->
+        <div class="card booking-box">
+            <h2 class="preview-title">Booking & Konfirmasi</h2>
+<label>Perkenalkan Namamu</label>
+<input type="text" id="clientName" placeholder="Nama lengkap/panggilan">
+
+            <label>Pilih Paket</label>
+            <select id="package">
+			    <option value="1100000">Paket Wedding Photo Standart – 1100K</option>
+				<option value="2500000">Wedding Photo Magazine – 2500K</option>
+				<option value="1700000">Paket Wedding Photo & Video Basic – 1700K</option>
+				<option value="750000">Wedding Photo Akad Basic Limit - 750k</option>
+				<option value="1500000">Video Cynematic – 1500K</option>
+				<option value="700000">Video Basic – 700K</option>
+                <option value="1200000">Engagement Photo & Video Teaser – 1200K</option>
+                <option value="700000">Engagement Photo Only – 700K</option>
+				<option value="600000">Prewedding Studio NON-PAKET – 600K</option>
+				<option value="800000">Prewedding Outdor NON-PAKET – 800K</option>
+				<option value="600000">Tendak Sinten Photo Only – 600K</option>
+				<option value="600000">Ulang Tahun Photo Only – 600K</option>
+            </select>
+
+            <label>Tanggal Booking</label>
+            <input type="date" id="bookingDate">
+
+            <label>Wilayah Acara</label>
+            <select id="area">
+                <option value="0">Dalam Daerah (lokal Free)</option>
+				<option value="50000">Kaliuling (+50K)</option>
+				<option value="50000">Iburaja (+50K)</option>
+                <option value="50000">Licin (+50K)</option>
+				<option value="100000">Lebakharjo (+100K)</option>
+				<option value="300000">Pronojiwo (+300K)</option>
+				<option value="300000">Ampelgading (+300K)</option>
+            </select>
+
+            <label>Durasi Acara Perhari</label>
+            <select id="days">
+                <option value="0">1 Hari (Free)</option>
+                <option value="200000">2 Hari (+200K)</option>
+            </select>
+
+            <div class="summary-box">
+                <p><strong>Paket:</strong> <span id="sumPackage">-</span></p>
+                <p><strong>Tanggal:</strong> <span id="sumDate">-</span></p>
+                <p><strong>Wilayah:</strong> <span id="sumArea">-</span></p>
+                <p><strong>Durasi:</strong> <span id="sumDays">-</span></p>
+
+                <hr>
+
+                <p><strong>Total Paket:</strong> <span id="sumPackagePrice">Rp 0</span></p>
+                <p><strong>Total Tambahan:</strong> <span id="sumExtra">Rp 0</span></p>
+                <p class="grand-total">
+                    TOTAL BAYAR: <span id="sumTotal">Rp 0</span>
+                </p>
+            </div>
+
+<button class="btn btn-wa" id="sendWA">
+    <span class="wa-icon">
+        <svg viewBox="0 0 32 32" class="wa-svg">
+            <path d="M19.11 17.44c-.27-.14-1.59-.78-1.84-.87-.25-.09-.43-.14-.61.14-.18.27-.7.87-.86 1.05-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.79-.7-1.33-1.57-1.49-1.84-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.45-.46-.61-.47-.16-.01-.34-.01-.52-.01-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29s.99 2.65 1.13 2.83c.14.18 1.95 2.98 4.73 4.18.66.28 1.18.45 1.58.58.66.21 1.26.18 1.74.11.53-.08 1.59-.65 1.82-1.27.23-.62.23-1.15.16-1.27-.07-.12-.25-.18-.52-.32z"/>
+            <path d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.65.87 5.1 2.34 7.07L4 29l7.1-2.28a11.95 11.95 0 0 0 4.92 1.05c6.62 0 12.02-5.4 12.02-12.02C28.04 8.4 22.64 3 16.02 3zm0 21.84c-1.56 0-3.08-.42-4.4-1.22l-.32-.19-4.21 1.35 1.38-4.1-.21-.33a9.88 9.88 0 1 1 7.76 4.49z"/>
+        </svg>
+    </span>
+    Kirim Booking ke WhatsApp
+</button>
+
+        </div>
+    </div>
+
+<footer>
+    Dejede Photography & Videography • Lumajang • 085236578999
+</footer>
+
+    <!-- SCRIPT -->
+<script>
+(function () {
+    const clientName = document.getElementById("clientName");
+    const pkg = document.getElementById("package");
+    const date = document.getElementById("bookingDate");
+    const area = document.getElementById("area");
+    const days = document.getElementById("days");
+
+    const sumPackage = document.getElementById("sumPackage");
+    const sumDate = document.getElementById("sumDate");
+    const sumArea = document.getElementById("sumArea");
+    const sumDays = document.getElementById("sumDays");
+
+    const sumPackagePrice = document.getElementById("sumPackagePrice");
+    const sumExtra = document.getElementById("sumExtra");
+    const sumTotal = document.getElementById("sumTotal");
+
+    function rupiah(num) {
+        return "Rp " + num.toLocaleString("id-ID");
+    }
+
+    function updateSummary() {
+        const pkgPrice = parseInt(pkg.value || 0);
+        const extraArea = parseInt(area.value || 0);
+        const extraDays = parseInt(days.value || 0);
+        const extraTotal = extraArea + extraDays;
+
+        sumPackage.textContent = pkg.options[pkg.selectedIndex].text;
+        sumDate.textContent = date.value || "-";
+        sumArea.textContent = area.options[area.selectedIndex].text;
+        sumDays.textContent = days.options[days.selectedIndex].text;
+
+        sumPackagePrice.textContent = rupiah(pkgPrice);
+        sumExtra.textContent = rupiah(extraTotal);
+        sumTotal.textContent = rupiah(pkgPrice + extraTotal);
+    }
+
+    pkg.addEventListener("change", updateSummary);
+    date.addEventListener("change", updateSummary);
+    area.addEventListener("change", updateSummary);
+    days.addEventListener("change", updateSummary);
+
+    document.getElementById("sendWA").addEventListener("click", function () {
+        if (!clientName.value) {
+            alert("Silakan isi nama klien terlebih dahulu.");
+            return;
+        }
+
+        if (!date.value) {
+            alert("Silakan pilih tanggal booking terlebih dahulu.");
+            return;
+        }
+
+        const message =
+`Halo DEJEDE
+
+Nama Saya: ${clientName.value}
+
+Saya ingin booking jasa foto/video dengan detail:
+
+Paket	: ${pkg.options[pkg.selectedIndex].text}
+Tanggal	: ${date.value}
+Wilayah	: ${area.options[area.selectedIndex].text}
+Durasi	: ${days.options[days.selectedIndex].text}
+
+Total Bayar:
+${sumTotal.textContent}
+
+Terima kasih`;
+
+        const phone = "6285236578999"; // GANTI NOMOR WA
+        const url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+        window.open(url, "_blank");
+    });
+
+    updateSummary();
+})();
+</script>
+
+
+</body>
+</html>

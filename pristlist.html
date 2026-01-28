@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dejede Pristlist Lokal 2026</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="logo">DEJEDE</a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+		<a href="pristlist.html" class="active">Pristlist</a>
+        <a href="booking.html">Booking</a>
+		<a href="weddinggen.html" class="nav-highlight">Weddinggen</a>
+		<a href="schedulegen.html" class="nav-highlight">Schedulegen</a>
+        <a href="about.html">About</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h1>Dejede Pristlist Lokal 2026</h1>
+
+    <div class="lock-section">
+        <p class="lock-warning">
+            *Mintalah kode akses ke admin untuk bisa akses harga pricelistnya
+        </p>
+        
+        <div class="lock-container" style="display: flex; gap: 8px; justify-content: center; max-width: 400px; margin: 0 auto;">
+            <input type="text" id="priceKey" placeholder="MASUKKAN KODE AKSES..." style="flex: 1; padding: 12px; border-radius: 8px; border: 2px solid #3e5241; font-weight: 700; font-family: 'Plus Jakarta Sans'; text-transform: uppercase;">
+            <button onclick="unlockPrice()" class="btn-unlock">BUKA HARGA</button>
+        </div>
+    </div>
+
+    <div class="pristlist-grid">
+	
+<!-- PLSTART -  DEJEDE -->
+        <div class="prist-frame">
+            <div class="prist-image">
+                <img src="images/wedding-basic.jpg" alt="wedding-basic">
+                <span class="badge">LIMITED</span>
+            </div>
+            <div class="prist-content">
+                <h2>Wedding Photo Basic</h2>
+                <p class="subtitle">Paket Photo Wedding Basic</p>
+
+                <div class="prist">
+                    <span class="label">Regular Price</span>
+                    <span class="amount">1100K</span>
+                    <span class="note">All Session Momment</span>
+                </div>
+
+                <ul class="feature-list">
+                    <li>Magnetic Album 15 sht</li>
+                    <li>Print Photo Edited 4R 100</li>
+                    <li>Inlcude All Softfile</li>
+                    <li>File Saved in googledrive</li>
+                    <li>1 Photographer + 1 Asist</li>
+					<li>Tambah Hari 200k</li>
+                </ul>
+            </div>
+
+            <div class="frame-note">
+                *Harga belum termasuk transport & akomodasi luar daerah
+            </div>
+        </div>
+<!-- PLEND - DEJEDE -->
+
+<!-- PLSTART - DEJEDE -->
+        <div class="prist-frame">
+            <div class="prist-image">
+                <img src="images/engagement-1.jpg" alt="magazine">
+                <span class="badge">UNLIMITED</span>
+            </div>
+            <div class="prist-content">
+                <h2>Wedding Photo Magazine</h2>
+                <p class="subtitle">Paket Photo Wedding Magazine</p>
+
+                <div class="prist">
+                    <span class="label">Regular Price</span>
+                    <span class="amount">2500K</span>
+                    <span class="note">All In Session</span>
+                </div>
+
+                <ul class="feature-list">
+                    <li>Magazine Album 20x30 Page</li>
+                    <li>Family Album Inluced 4R 40x</li>
+                    <li>Bonus Cetak 10rs 4x</li>
+                    <li>Inlcude All Softfile</li>
+                    <li>File Saved in googledrive</li>
+                    <li>1 Photographer + 1 Asist</li>
+					<li>Tambah Hari 200k</li>
+                </ul>
+            </div>
+
+            <div class="frame-note">
+                *Harga belum termasuk transport & akomodasi luar daerah
+            </div>
+        </div>
+<!-- PLEND - DEJEDE -->
+
+<!-- PLSTART - DEJEDE -->
+        <div class="prist-frame">
+            <div class="prist-image">
+                <img src="images/wedding-paket.jpg" alt="wedding-paket">
+                <span class="badge">UNLIMITED</span>
+            </div>
+            <div class="prist-content">
+                <h2>Wedding Photo & Video</h2>
+                <p class="subtitle">Paket Photo Basic & Video Dokumentasi</p>
+
+                <div class="prist">
+                    <span class="label">Limited Offer</span>
+                    <span class="amount">1700K</span>
+                    <span class="note">All Session Momment</span>
+                </div>
+
+                <ul class="feature-list">
+                    <li>Magnetic Album 15 sht</li>
+                    <li>Print Photo Edited 4R 100</li>
+					<li>Video Dokumentasi 60 menit Edited</li>
+                    <li>Inlcude All Softfile</li>
+                    <li>File Saved in googledrive</li>
+                    <li>1 Photographer + 1 Videographer</li>
+					<li>Tambah Hari 200k</li>
+                </ul>
+            </div>
+
+            <div class="frame-note">
+                *Harga belum termasuk transport & akomodasi luar daerah
+            </div>
+        </div>
+<!-- PLEND - DEJEDE -->
+
+<!-- PLSTART - DEJEDE -->
+        <div class="prist-frame">
+            <div class="prist-image">
+                <img src="images/wedding-akad.jpg" alt="wedding-akad">
+                <span class="badge">LIMITED</span>
+            </div>
+            <div class="prist-content">
+                <h2>Paket Akad</h2>
+                <p class="subtitle">Wedding Paket Akad Basic</p>
+
+                <div class="prist">
+                    <span class="label">Limited Offer</span>
+                    <span class="amount">750K</span>
+                    <span class="note">2–3 Hours Session</span>
+                </div>
+
+                <ul class="feature-list">
+                    <li>Mini Album 40 Printing 4R</li>
+                    <li>Inlcude Edited Files</li>
+                    <li>File Saved in googledrive</li>
+                    <li>1 Photographer</li>
+                </ul>
+            </div>
+
+            <div class="frame-note">
+                *Harga belum termasuk transport & akomodasi luar daerah
+            </div>
+        </div>
+<!-- PLEND - DEJEDE -->
+
+<!-- PLSTART - DEJEDE -->
+        <div class="prist-frame">
+            <div class="prist-image">
+                <img src="images/engagement-1.jpg" alt="engagement-plus">
+                <span class="badge">UNLIMITED</span>
+            </div>
+            <div class="prist-content">
+                <h2>Engagement Photo & Video Teaser</h2>
+                <p class="subtitle">Engagement Paket Photo & Video Teaser</p>
+
+                <div class="prist">
+                    <span class="label">Regular Price</span>
+                    <span class="amount">1300K</span>
+                    <span class="note">All In • 2–3 Hours Session</span>
+                </div>
+
+                <ul class="feature-list">
+                    <li>Mini Album 40 Printing 4R</li>
+                    <li>Inlcude Edited Files</li>
+                    <li>File Saved in googledrive</li>
+                    <li>Video Teaser</li>
+                    <li>File Saved in googledrive</li>
+                    <li>1 Photographer + 1 Videographer</li>
+                </ul>
+            </div>
+
+            <div class="frame-note">
+                *Harga belum termasuk transport & akomodasi luar daerah
+            </div>
+        </div>
+<!-- PLEND - DEJEDE -->
+
+<!-- PLSTART - DEJEDE -->
+        <div class="prist-frame">
+            <div class="prist-image">
+                <img src="images/engagement-1.jpg" alt="video-cyne">
+                <span class="badge">UNLIMITED</span>
+            </div>
+            <div class="prist-content">
+                <h2>Cynematic Video Wedding</h2>
+                <p class="subtitle">Paket Cynematic Video Wedding</p>
+
+                <div class="prist">
+                    <span class="label">Regular Price</span>
+                    <span class="amount">1500K</span>
+                    <span class="note">All Session Momment</span>
+                </div>
+
+                <ul class="feature-list">
+                    <li>Video Cynematic Wedding</li>
+                    <li>Video Dokumentasi Wedding</li>
+                    <li>Drone Footage</li>
+					<li>stabilixer Footage</li>
+					<li>File Saved in googledrive</li>
+                </ul>
+            </div>
+
+            <div class="frame-note">
+                *Harga belum termasuk transport & akomodasi luar daerah
+            </div>
+        </div>
+<!-- PLEND - DEJEDE -->
+
+<!-- PLSTART - DEJEDE -->
+        <div class="prist-frame">
+            <div class="prist-image">
+                <img src="images/engagement-1.jpg" alt="video-dokumentasi">
+                <span class="badge">LIMITED</span>
+            </div>
+            <div class="prist-content">
+                <h2>Video Dokumentasi</h2>
+                <p class="subtitle">Paket Video Dokumentasi</p>
+
+                <div class="prist">
+                    <span class="label">Limited Offer</span>
+                    <span class="amount">700K</span>
+                    <span class="note">All Momment Video</span>
+                </div>
+
+                <ul class="feature-list">
+                    <li>Video Dokumentasi</li>
+					<li>All Momment Record</li>
+					<li>File Saved in Youtube</li>
+					<li>Included In Disk</li>
+                </ul>
+            </div>
+
+            <div class="frame-note">
+                *Harga belum termasuk transport & akomodasi luar daerah
+            </div>
+        </div>
+<!-- PLEND - DEJEDE -->
+
+<!-- PLSTART - DEJEDE -->
+        <div class="prist-frame">
+            <div class="prist-image">
+                <img src="images/engagement-1.jpg" alt="prewedding-indoor">
+                <span class="badge">LIMITED</span>
+            </div>
+            <div class="prist-content">
+                <h2>Prewedding Studio</h2>
+                <p class="subtitle">Photo Prewedding Indoor Non Paket</p>
+                <div class="prist">
+                    <span class="label">Regular Price</span>
+                    <span class="amount">600K</span>
+                    <span class="note">Max In • 1 Hours Session</span>
+                </div>
+
+                <ul class="feature-list">
+                    <li>Cetak 12Rs + Pigura</li>
+                    <li>Free Rent Dejede Studio</li>
+                    <li>Maximal 1 Konsep</li>
+                    <li>1 Photograper</li>
+                </ul>
+            </div>
+
+            <div class="frame-note">
+                *Lebih dari 1 konsep ada tambahan harga kesepakatan
+            </div>
+        </div>
+<!-- PLEND - DEJEDE -->
+
+<!-- PLSTART - DEJEDE -->
+        <div class="prist-frame">
+            <div class="prist-image">
+                <img src="images/engagement-1.jpg" alt="prewedding-outdoor">
+                <span class="badge">LIMITED</span>
+            </div>
+            <div class="prist-content">
+                <h2>Prewedding Outdoor</h2>
+                <p class="subtitle">Photo Prewedding Outddor Non Paket</p>
+
+                <div class="prist">
+                    <span class="label">Limited Offer</span>
+                    <span class="amount">1700K</span>
+                    <span class="note">Max In • 1 Hours Session</span>
+                </div>
+
+                <ul class="feature-list">
+                    <li>2x Cetak 12Rs + Pigura</li>
+                    <li>Maximal 2 Konsep</li>
+                    <li>1 Photograper</li>
+					<li>Ada tambahan harga untuk di luar tempat kesepakatan</li>
+                </ul>
+            </div>
+
+            <div class="frame-note">
+                *Harga belum termasuk transport & akomodasi luar kota/daerah
+            </div>
+        </div>
+<!-- PLEND - DEJEDE -->
+
+<!-- PLSTART - DEJEDE -->
+        <div class="prist-frame">
+            <div class="prist-image">
+                <img src="images/tedak-sinten.jpg" alt="tedaksinten">
+                <span class="badge">LIMITED</span>
+            </div>
+            <div class="prist-content">
+                <h2>Tedak Sinten Photo</h2>
+                <p class="subtitle">Photo Acara 7 Bulanan</p>
+
+                <div class="prist">
+                    <span class="label">Limited Offer</span>
+                    <span class="amount">600K</span>
+                    <span class="note">Max In • 1 Hours Session</span>
+                </div>
+
+                <ul class="feature-list">
+                    <li>Mini Album 40 Printing 4R</li>
+                    <li>Inlcude Edited Files</li>
+                    <li>File Saved in googledrive</li>
+                    <li>1 Photographer</li>
+                </ul>
+            </div>
+
+            <div class="frame-note">
+                *Harga belum termasuk transport & akomodasi luar kota/daerah
+            </div>
+        </div>
+<!-- PLEND - DEJEDE -->
+
+<!-- PLSTART - DEJEDE -->
+        <div class="prist-frame">
+            <div class="prist-image">
+                <img src="images/ultah.jpg" alt="ultah">
+                <span class="badge">LIMITED</span>
+            </div>
+            <div class="prist-content">
+                <h2>Ulang Tahun Photo</h2>
+                <p class="subtitle">Photo Acara Ulang Tahun</p>
+
+                <div class="prist">
+                    <span class="label">Limited Offer</span>
+                    <span class="amount">600K</span>
+                    <span class="note">Max In • 1 Hours Session</span>
+                </div>
+
+                <ul class="feature-list">
+                    <li>Mini Album 40 Printing 4R</li>
+                    <li>Inlcude Edited Files</li>
+                    <li>File Saved in googledrive</li>
+                    <li>1 Photographer</li>
+                </ul>
+            </div>
+
+            <div class="frame-note">
+                *Harga belum termasuk transport & akomodasi luar kota/daerah
+            </div>
+        </div>
+<!-- PLEND - DEJEDE -->
+
+    </div>
+</div>
+
+<footer>
+    Dejede Photography & Videography • Lumajang • 085236578999
+</footer>
+
+<script>
+function unlockPrice() {
+    const keyInput = document.getElementById('priceKey');
+    const prices = document.querySelectorAll('.amount');
+    const lockBox = document.querySelector('.lock-section');
+    
+    // Password akses (Bisa pakai huruf kecil/besar saat input)
+    const secretKey = "DEJEDE2026"; 
+
+    if (keyInput.value.toUpperCase() === secretKey.toUpperCase()) {
+        // Menghilangkan efek blur
+        prices.forEach(price => {
+            price.classList.add('unlocked');
+        });
+        
+        // Sembunyikan box input dengan transisi
+        lockBox.style.transition = "opacity 0.5s ease";
+        lockBox.style.opacity = "0";
+        
+        setTimeout(() => {
+            lockBox.style.display = "none";
+        }, 500);
+
+        alert("Akses Diterima! Selamat melihat pricelist kami.");
+    } else {
+        alert("Kode Salah! Silakan hubungi admin Dejede.");
+        keyInput.value = ""; 
+    }
+}
+
+// Fitur Enter Key
+document.getElementById("priceKey").addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        unlockPrice();
+    }
+});
+// Floating tombol
+    setTimeout(() => {
+        document.getElementById('floatingBooking').classList.add('show');
+    }, 10000);
+</script>
+<a href="booking.html" id="floatingBooking" class="floating-booking">
+    BOOKING DEJEDE
+</a>
+
+</body>
+</html>
