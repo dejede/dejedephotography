@@ -31,15 +31,18 @@ body {
 /* =================================================
    NAVBAR - DEJEDE CODE 2026
    ================================================= */
+html, body {
+    margin: 0;
+    padding: 0;
+}
 .navbar {
+	position: sticky;
     display: flex;
     justify-content: space-between;
 	align-items: center; /* Menjaga semua elemen di tengah vertikal */
     padding: 20px 7%;
     min-height: 75px; /* Sedikit lebih tinggi agar lega */
     background: var(--sage-dark);
-    position: sticky;
-    top: 0;
     z-index: 1000;
 	border-bottom: 3px solid #c7e6ab; /* lebih gelap sedikit */
     box-shadow: 0 6px 18px rgba(0,0,0,0.12);
@@ -60,31 +63,6 @@ body {
     letter-spacing: 2px; /* Lebih rapat dan modern */
     transition: color 0.25s ease;
 }
-
-/* LOGO ICON */
-.logo::before {
-    content: "";
-    width: 40px;
-    height: 40px;
-    flex-shrink: 0;
-    background: url("./images/logo.png") center / contain no-repeat;
-    display: inline-block;
-    transition: transform 0.25s ease, filter 0.25s ease;
-}
-
-.logo:hover {
-    color: var(--sage);
-}
-
-.logo:hover::before {
-    transform: scale(1.1) rotate(5deg); /* Animasi lebih dinamis */
-    filter: brightness(1.15);
-}
-
-.logo:active::before {
-    transform: scale(0.95);
-}
-
 /* LINK NAV */
 .nav-links a {
 	font-family: 'Plus Jakarta Sans', sans-serif;
@@ -113,6 +91,32 @@ body {
     background: rgba(255, 255, 255, 0.12);
     box-shadow: inset 0 0 0 1px rgba(195, 213, 186, 0.4);
 }
+
+/* LOGO ICON */
+.logo::before {
+    content: "";
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    background: url("./images/logo.png") center / contain no-repeat;
+    display: inline-block;
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.logo:hover {
+    color: var(--sage);
+}
+
+.logo:hover::before {
+    transform: scale(1.1) rotate(5deg); /* Animasi lebih dinamis */
+    filter: brightness(1.15);
+}
+
+.logo:active::before {
+    transform: scale(0.95);
+}
+
+
 
 /* =================================================
    LAYOUT
@@ -478,14 +482,16 @@ footer {
 }
 
 /* =================================================
-   RESPONSIVE
+   RESPONSIVE BUAT HP
    ================================================= */
 @media (max-width: 768px) {
     .navbar {
+		position: sticky;
+		top: 0;
         flex-direction: column;
 		min-height: 64px;
         align-items: center;     /* CENTER */
-        gap: 8px;                /* LEBIH RAPAT */
+        gap: 1px;                /* LEBIH RAPAT */
         padding: 8px 10px;      /* DIPERKETAT */
         text-align: center;
     }
@@ -494,13 +500,13 @@ footer {
     display: flex;
     flex-direction: row; /* Paksa satu baris */
 	align-items: center; /* KUNCI UTAMA: Semua item di baris ini sejajar tengah */
-    gap: 2px; /* Jarak antar box menu */
+    gap: 0px; /* Jarak antar box menu */
     flex-wrap: nowrap; /* MENCEGAH MENUMPUK KE BAWAH */
 }
-
+/* Mengecilkan navigasi dejede */
     .nav-links a {
-        margin: 0;
-        font-size: 12px;
+        margin: 1;
+        font-size: 9px;
     }
 }
 
@@ -519,8 +525,8 @@ footer {
 
 @media (max-width: 480px) {
     footer {
-        font-size: 11px;
-        padding: 23px 13px;
+        font-size: 10px;
+        padding: 20px 10px;
     }
 }
 
@@ -703,75 +709,6 @@ footer {
     text-align: center;
 }
 
-/* ================= NAV SUBMENU ================= */
-.nav-item {
-    position: relative;
-}
-
-.has-submenu > a {
-    padding-right: 1px;
-}
-
-/* Panah kecil */
-.has-submenu > a::after {
-    content: "▾";
-    font-size: 10px;
-    margin-left: 1px;
-}
-
-/* Submenu box */
-.submenu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    min-width: 1px;
-    background: var(--white);
-    border-radius: 8px;
-    padding: 1px 0;
-    margin-top: 5px;
-    display: none;
-    box-shadow: 0 2px 7px rgba(0,0,0,0.1);
-    /* Pastikan submenu tidak mewarisi animasi scale dari parent */
-    transform: scale(1) !important; 
-}
-
-/* Reset total untuk link di dalam submenu */
-.submenu a {
-    display: block;
-    padding: 10px 15px;
-    font-size: 11px;     /* Ukuran font tetap kecil */
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--dark) !important;
-    background: transparent !important;
-
-}
-
-/* Hover khusus untuk isi di dalam submenu */
-.submenu a:hover {
-    background: var(--light) !important;
-    color: var(--sage-dark) !important;
-}
-
-/* Hover desktop */
-.has-submenu:hover .submenu {
-    display: block;
-}
-
-/* Mobile submenu */
-@media (max-width: 768px) {
-    .submenu {
-        position: static;
-        box-shadow: none;
-        border: none;
-        padding-left: 1px;
-        display: none;
-    }
-
-    .has-submenu.open .submenu {
-        display: block;
-    }
-}
 
 /* Styling Section Password */
 .lock-section {
@@ -851,7 +788,10 @@ footer {
 .floating-booking {
     position: fixed;
     bottom: 24px;
-    right: 24px;
+    right: 12px;
+	left: 12px;
+	width: auto;
+    text-align: center;
     background: #c62828;
     color: #ffffff;
     padding: 14px 26px;
