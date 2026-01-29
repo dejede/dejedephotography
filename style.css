@@ -36,17 +36,22 @@ html, body {
     padding: 0;
 }
 .navbar {
-	position: sticky;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+
     display: flex;
     justify-content: space-between;
-	align-items: center; /* Menjaga semua elemen di tengah vertikal */
+    align-items: center;
+
     padding: 20px 7%;
-    min-height: 75px; /* Sedikit lebih tinggi agar lega */
+    min-height: 75px;
     background: var(--sage-dark);
-    z-index: 1000;
-	border-bottom: 3px solid #c7e6ab; /* lebih gelap sedikit */
+
+    border-bottom: 3px solid #c7e6ab;
     box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
+
 .navbar a {
     line-height: 1.2;
 }
@@ -636,7 +641,7 @@ footer {
     box-shadow: 0 16px 45px rgba(0,0,0,0.12);
 }
 
-/* IMAGE */
+/* IMAGE optimasi zaly loaded */
 .prist-image {
     position: relative;
     height: 300px;
@@ -647,7 +652,14 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+
+    background: #e6ece6; /* skeleton */
+    opacity: 0;
+    transition: opacity 0.45s ease;
+}
+
+.prist-image img.loaded {
+    opacity: 1;
 }
 
 /* BADGE */
