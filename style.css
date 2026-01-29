@@ -136,9 +136,52 @@ html, body {
 h1 {
     text-align: center;
     margin-bottom: 30px;
-    font-size: 32px;
+	text-transform: uppercase;
+    color: var(--sage-dark);
     font-weight: 800;
+    font-size: clamp(18px, 4vw, 26px);
+    letter-spacing: 0.4px;
+
+    animation: h1RevealLoop 5s ease-out infinite;
 }
+
+@keyframes h1RevealLoop {
+    0% {
+        opacity: 0;
+        letter-spacing: -0.5px;
+    }
+
+    8% {
+        opacity: 1;
+        letter-spacing: 0.6px;
+    }
+
+    92% {
+        opacity: 1;
+        letter-spacing: 0.6px;
+    }
+
+    100% {
+        opacity: 0;
+        letter-spacing: -0.5px;
+    }
+}
+
+
+
+/* Mobile */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 15px;
+    }
+}
+
 
 .card {
     background: var(--white);
@@ -588,7 +631,7 @@ footer {
 }
 
 .prist-content h2 {
-    font-size: 26px;
+    font-size: 18px;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -883,4 +926,3 @@ footer {
 .navbar a.active:not(.nav-highlight) {
     color: inherit;
 }
-
