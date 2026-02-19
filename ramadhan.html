@@ -3,30 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Open Graph -->
+<!-- Open Graph Meta -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="🌿 DEJEDE – Ramadan 2026 Dashboard">
-<meta property="og:description" content="Jadwal Puasa, Sholat, Audio Adzan & Kalkulator Zakat Otomatis.">
-<meta property="og:image" content="https://dejede.github.io/dejedephotography/images/ramadan.jpg">
+<meta property="og:title" content="🌿 Ramadhan 2026 Dashboard - Dejede">
+<meta property="og:description" content="Jadwal Puasa, Sholat, Alarm Adzan, Grafik & Kalkulator Zakat Otomatis.">
+<meta property="og:image" content="https://dejede.github.io/dejedephotography/images/ramadhan.jpg">
 <meta property="og:url" content="https://dejede.github.io/dejedephotography/ramadhan.html">
-<meta property="og:site_name" content="DEJEDE">
-
+<meta property="og:site_name" content="Ramadhan 2026 App">
+<!-- WhatsApp & Twitter Support -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="🌿 DEJEDE – Ramadan 2026 Dashboard">
-<meta name="twitter:description" content="Digital Ramadan Experience">
-<meta name="twitter:image" content="https://dejede.github.io/dejedephotography/images/ramadan.jpg">
-
-    <!-- CSS EXTERNAL -->
-    <link rel="stylesheet" href="style.css">
-	    <!-- FAVICON -->
-    <link rel="icon" href="./favicon/favicon.ico" sizes="any">
-    <!-- (opsional tapi direkomendasikan) -->
-    <link rel="icon" type="favicon/png" sizes="32x32" href="./favicon/favicon-32x32.png">
-    <link rel="icon" type="favicon/png" sizes="16x16" href="./favicon/favicon-16x16.png">
-    <link rel="dejede-icon" href="./favicon/favicon-32x32.png">
-    <!-- Theme color (mobile browser) -->
-    <meta name="theme-color" content="#3e5241">
-<title>Ramadan 2026 – Jadwal Berbuka dan Sholat</title>
+<meta name="twitter:title" content="🌿 Ramadhan 2026 Dashboard - Dejede">
+<meta name="twitter:description" content="Dashboard Puasa & Jadwal Sholat Otomatis">
+<meta name="twitter:image" content="https://dejede.github.io/dejedephotography/images/ramadhan.jpg">
+<!-- CSS EXTERNAL -->
+<link rel="stylesheet" href="style.css">
+<!-- FAVICON -->
+<link rel="icon" href="./favicon/favicon.ico" sizes="any">
+<!-- (opsional tapi direkomendasikan) -->
+<link rel="icon" type="favicon/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+<link rel="icon" type="favicon/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+<link rel="dejede-icon" href="./favicon/favicon-32x32.png">
+<!-- Theme color (mobile browser) -->
+<meta name="theme-color" content="#3e5241">
+<title>Ramadhan 2026 – Jadwal Berbuka dan Sholat</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -263,7 +262,7 @@ height:10px;
 
 <div class="container">
 
-<h1>🌿 Ramadan 2026</h1>
+<h1>🌿 Ramadhan 2026</h1>
 
 <div class="dashboard">
 
@@ -324,10 +323,10 @@ Jumlah jiwa:
 
 </div>
 
-<h3>📆 Kalender Grid Ramadan</h3>
-<div class="grid" id="ramadanGrid"></div>
+<h3>📆 Kalender Grid Ramadhan</h3>
+<div class="grid" id="RamadhanGrid"></div>
 
-<h3>🕌 Jadwal Sholat Ramadan</h3>
+<h3>🕌 Jadwal Sholat Ramadhan</h3>
 <div class="table-wrapper">
 
 <table>
@@ -377,7 +376,7 @@ generateChart();
 
 function render(){
 const tbody=document.getElementById("tbody");
-const grid=document.getElementById("ramadanGrid");
+const grid=document.getElementById("RamadhanGrid");
 tbody.innerHTML="";
 grid.innerHTML="";
 
@@ -536,5 +535,3 @@ audio.play().catch(()=>{});
 <audio id="azanAudio"></audio>
 </body>
 </html>
-
-
