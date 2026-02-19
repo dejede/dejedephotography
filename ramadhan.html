@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Open Graph Meta -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="🌿 Ramadan 2026 Dashboard - Dejede">
+<meta property="og:description" content="Jadwal Puasa, Sholat, Alarm Adzan, Grafik & Kalkulator Zakat Otomatis.">
+<meta property="og:image" content="https://dejede.github.io/dejedephotography/images/ramadan.jpg">
+<meta property="og:url" content="https://dejede.github.io/dejedephotography/">
+<meta property="og:site_name" content="Ramadan 2026 App">
+<!-- WhatsApp & Twitter Support -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="🌿 Ramadan 2026 Dashboard - Dejede">
+<meta name="twitter:description" content="Dashboard Puasa & Jadwal Sholat Otomatis">
+<meta name="twitter:image" content="https://dejede.github.io/dejedephotography/images/ramadan.jpg">
+    <!-- CSS EXTERNAL -->
+    <link rel="stylesheet" href="style.css">
+	    <!-- FAVICON -->
+    <link rel="icon" href="./favicon/favicon.ico" sizes="any">
+    <!-- (opsional tapi direkomendasikan) -->
+    <link rel="icon" type="favicon/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="favicon/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="dejede-icon" href="./favicon/favicon-32x32.png">
+    <!-- Theme color (mobile browser) -->
+    <meta name="theme-color" content="#3e5241">
+<title>Ramadan 2026 – Jadwal Berbuka dan Sholat</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+:root{
+--sage:#9CAF88;
+--sage-dark:#6E7F60;
+--sage-light:#E8F0E3;
+--today:#dff0cd;
+--imsak:#FFF3CD;
+--maghrib:#F8D7DA;
+}
+
+body{
+margin:0;
+font-family:'Inter',sans-serif;
+background:var(--sage-light);
+color:#2f3e2f;
+}
+
+.container{
+max-width:1300px;
+margin:auto;
+padding:20px;
+}
+
+h1{text-align:center;color:var(--sage-dark);}
+
+.dashboard{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+margin-bottom:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+button,input{
+padding:8px;
+border-radius:8px;
+border:1px solid #ccc;
+margin-top:5px;
+}
+
+button{
+background:var(--sage);
+color:white;
+border:none;
+cursor:pointer;
+}
+
+.progress-bar{
+height:15px;background:#ddd;border-radius:10px;overflow:hidden;margin-top:10px;
+}
+.progress-fill{
+height:100%;background:var(--sage);width:0%;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+th{
+background:var(--sage);
+color:white;
+padding:8px;
+}
+
+td{
+padding:6px;
+text-align:center;
+border-bottom:1px solid #eee;
+}
+
+/* Highlight baris hari ini */
+tr.today td{
+background:var(--today) !important;
+font-weight:600;
+}
+
+/* Highlight khusus kolom */
+td.imsak{
+background:var(--imsak);
+font-weight:600;
+}
+
+td.maghrib{
+background:var(--maghrib);
+font-weight:600;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(7,1fr);
+gap:5px;
+margin-top:10px;
+}
+
+.grid div{
+background:white;
+padding:10px;
+border-radius:8px;
+text-align:center;
+font-size:12px;
+box-shadow:0 3px 8px rgba(0,0,0,0.05);
+}
+
+.grid .todayGrid{
+background:var(--today);
+font-weight:600;
+}
+
+footer{
+margin-top:40px;
+text-align:center;
+font-size:12px;
+color:#666;
+padding:15px;
+}
+
+.table-wrapper{
+width:100%;
+overflow-x:auto;
+-webkit-overflow-scrolling:touch;
+}
+
+
+/* =========================
+   MOBILE TABLE COMPACT
+========================= */
+@media (max-width:768px){
+
+.container{
+padding:10px;
+}
+
+h1{
+font-size:18px;
+margin-bottom:10px;
+}
+
+table{
+width:100%;
+font-size:11px;
+}
+
+th, td{
+padding:4px;
+white-space:nowrap;
+}
+
+th{
+font-size:10px;
+}
+
+.dashboard{
+grid-template-columns:1fr;
+}
+
+.grid{
+grid-template-columns:repeat(4,1fr);
+}
+
+}
+
+/* =========================
+   MOBILE CARD OPTIMIZATION
+========================= */
+@media (max-width:768px){
+
+.dashboard{
+grid-template-columns:1fr;
+gap:12px;
+}
+
+.card{
+padding:14px;
+border-radius:14px;
+box-shadow:0 4px 12px rgba(0,0,0,0.06);
+}
+
+.card h3{
+font-size:14px;
+margin-bottom:8px;
+}
+
+button{
+width:100%;
+font-size:13px;
+padding:8px;
+}
+
+input, select{
+width:100%;
+font-size:13px;
+padding:7px;
+}
+
+.progress-bar{
+height:10px;
+}
+
+}
+
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="logo">DEJEDE</a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+		<a href="pristlist.html" class="active">Pristlist</a>
+        <a href="booking.html">Booking</a>
+		<a href="weddinggen.html" class="nav-highlight">Weddinggen</a>
+		<a href="schedulegen.html" class="nav-highlight">Schedulegen</a>
+        <a href="about.html">About</a>
+
+    </div>
+</nav>
+
+<div class="container">
+
+<h1>🌿 Ramadan 2026</h1>
+
+<div class="dashboard">
+
+<div class="card">
+<h3>🕒 Waktu Sekarang</h3>
+<div id="clock"></div>
+<div id="dayInfo"></div>
+<div class="progress-bar">
+<div class="progress-fill" id="progressFill"></div>
+</div>
+<div id="lebaran"></div>
+</div>
+
+<div class="card">
+<h3>📊 Grafik Durasi Puasa</h3>
+<canvas id="chart"></canvas>
+<div id="avg"></div>
+</div>
+
+<div class="card">
+<h3>🎧 Audio Adzan</h3>
+
+Pilih Jenis Adzan:
+<br>
+<select id="azanSelect" onchange="changeAzan()">
+<option value="https://islamdownload.net/r/123801/mecca_56_22.mp3">Makkah</option>
+<option value="https://islamdownload.net/r/123801/adan_madinah_32_16.mp3">Madinah</option>
+<option value="https://islamdownload.net/r/123801/adzan_turkey-1.mp3">Turkey</option>
+</select>
+
+<br><br>
+
+🎚 Volume:
+<br>
+<input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1" onchange="changeVolume()">
+
+<br><br>
+
+<button onclick="testAdzan()">🔊 Tes</button>
+<button onclick="stopAdzan()">⏹ Stop</button>
+
+</div>
+
+
+<div class="card">
+<h3>💰 Kalkulator Zakat Fitrah</h3>
+Harga beras per kg (Rp):
+<br>
+<input type="number" id="ricePrice">
+<br>
+Jumlah jiwa:
+<br>
+<input type="number" id="people">
+<br><br>
+<button onclick="calcZakat()">Hitung Zakat</button>
+<div id="zakatResult" style="margin-top:10px;font-weight:600;"></div>
+</div>
+
+</div>
+
+<h3>📆 Kalender Grid Ramadan</h3>
+<div class="grid" id="ramadanGrid"></div>
+
+<h3>🕌 Jadwal Sholat Ramadan</h3>
+<div class="table-wrapper">
+
+<table>
+
+<thead>
+<tr>
+<th>Tanggal</th>
+<th>Imsak</th>
+<th>Subuh</th>
+<th>Dzuhur</th>
+<th>Ashar</th>
+<th>Maghrib</th>
+<th>Isya</th>
+</tr>
+</thead>
+<tbody id="tbody"></tbody>
+</table>
+</div>
+
+<footer>
+app by | dejede | 085236578999
+</footer>
+
+</div>
+
+<script>
+let scheduleData=[];
+
+setInterval(()=>{
+document.getElementById("clock").innerText=new Date().toLocaleTimeString();
+},1000);
+
+async function loadSchedule(){
+
+const feb=await fetch("https://api.aladhan.com/v1/calendarByCity?city=Lumajang&country=Indonesia&method=11&month=2&year=2026");
+const mar=await fetch("https://api.aladhan.com/v1/calendarByCity?city=Lumajang&country=Indonesia&method=11&month=3&year=2026");
+
+const febData=await feb.json();
+const marData=await mar.json();
+
+let full=[...febData.data,...marData.data];
+scheduleData=full.filter(d=>d.date.hijri.month.number===9);
+
+render();
+generateChart();
+}
+
+function render(){
+const tbody=document.getElementById("tbody");
+const grid=document.getElementById("ramadanGrid");
+tbody.innerHTML="";
+grid.innerHTML="";
+
+const todayStr=new Date().toLocaleDateString("en-GB").split("/").join("-");
+
+scheduleData.forEach((day,i)=>{
+
+let imsak=new Date("1970-01-01T"+day.timings.Fajr.slice(0,5)+":00");
+imsak.setMinutes(imsak.getMinutes()-10);
+let imsakStr=imsak.toTimeString().slice(0,5);
+
+let rowClass=day.date.gregorian.date===todayStr?"today":"";
+
+tbody.innerHTML+=`
+<tr class="${rowClass}">
+<td>${day.date.gregorian.date}</td>
+<td class="imsak">${imsakStr}</td>
+<td>${day.timings.Fajr.slice(0,5)}</td>
+<td>${day.timings.Dhuhr.slice(0,5)}</td>
+<td>${day.timings.Asr.slice(0,5)}</td>
+<td class="maghrib">${day.timings.Maghrib.slice(0,5)}</td>
+<td>${day.timings.Isha.slice(0,5)}</td>
+</tr>`;
+
+let gridClass=day.date.gregorian.date===todayStr?"todayGrid":"";
+grid.innerHTML+=`
+<div class="${gridClass}">
+${day.date.hijri.day}
+<br>
+<small>${day.date.gregorian.date}</small>
+</div>`;
+});
+
+updateProgress();
+}
+
+function updateProgress(){
+const now=new Date();
+let count=0;
+
+scheduleData.forEach((d,i)=>{
+const p=d.date.gregorian.date.split("-");
+const date=new Date(p[2],p[1]-1,p[0]);
+if(now>=date) count=i+1;
+});
+
+document.getElementById("dayInfo").innerText=
+"Hari ke-"+count+" dari "+scheduleData.length;
+
+document.getElementById("progressFill").style.width=
+(count/scheduleData.length*100)+"%";
+
+if(count===27){
+alert("🎯 Jangan lupa bayar zakat!");
+}
+
+if(count===scheduleData.length){
+document.getElementById("lebaran").innerText="🏆 Selamat Lebaran!";
+}
+}
+
+function generateChart(){
+let labels=[];
+let data=[];
+let total=0;
+
+scheduleData.forEach(d=>{
+const start=new Date("1970-01-01T"+d.timings.Fajr.slice(0,5)+":00");
+const end=new Date("1970-01-01T"+d.timings.Maghrib.slice(0,5)+":00");
+const diff=(end-start)/1000/60/60;
+labels.push(d.date.hijri.day);
+data.push(diff);
+total+=diff;
+});
+
+const avg=total/data.length;
+document.getElementById("avg").innerText=
+"Rata-rata: "+avg.toFixed(2)+" jam";
+
+new Chart(document.getElementById("chart"),{
+type:"line",
+data:{
+labels:labels,
+datasets:[{
+data:data,
+borderColor:"#9CAF88",
+backgroundColor:"rgba(156,175,136,0.2)",
+fill:true
+}]
+},
+options:{plugins:{legend:{display:false}}}
+});
+}
+
+function calcZakat(){
+const price=parseFloat(document.getElementById("ricePrice").value);
+const people=parseInt(document.getElementById("people").value);
+
+if(isNaN(price)||isNaN(people)){
+document.getElementById("zakatResult").innerText="Isi semua data dengan benar.";
+return;
+}
+
+const zakat=2.5*price*people;
+
+document.getElementById("zakatResult").innerText=
+"Total Zakat: Rp "+zakat.toLocaleString("id-ID");
+}
+
+loadSchedule();
+
+window.addEventListener("DOMContentLoaded", function(){
+
+const audio = document.getElementById("azanAudio");
+const select = document.getElementById("azanSelect");
+const volume = document.getElementById("volumeSlider");
+
+if(audio && select){
+audio.src = select.value;
+}
+
+window.changeAzan = function(){
+if(audio && select){
+audio.src = select.value;
+audio.currentTime = 0;
+audio.play().catch(()=>{});
+}
+}
+
+window.changeVolume = function(){
+if(audio && volume){
+audio.volume = volume.value;
+}
+}
+
+window.stopAdzan = function(){
+if(audio){
+audio.pause();
+audio.currentTime = 0;
+}
+}
+
+window.testAdzan = function(){
+if(audio && select){
+audio.src = select.value;
+audio.currentTime = 0;
+audio.play().catch(()=>{});
+}
+}
+
+
+});
+
+
+</script>
+<audio id="azanAudio"></audio>
+</body>
+</html>
